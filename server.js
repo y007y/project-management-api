@@ -1,15 +1,32 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const db = require('./config/db');
+const mysql = require('mysql2');
 
 const app = express();
+
+// إعداد الاتصال بقاعدة البيانات
+const connection = mysql.createConnection({
+  host: '127.0.0.1',
+  user: 'u621743320_tak',
+  password: 'Aa0557737365@',
+  database: 'u621743320_tak'
+});
+
+// اختبار الاتصال
+connection.connect(error => {
+  if (error) {
+    console.error('فشل الاتصال بقاعدة البيانات:', error);
+    return;
+  }
+  console.log('تم الاتصال بقاعدة البيانات بنجاح');
+});
 
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// المسارات
+// المسارات (routes)
 app.use('/api/auth', require('./routes/auth.routes'));
 app.use('/api/projects', require('./routes/project.routes'));
 app.use('/api/tasks', require('./routes/task.routes'));
