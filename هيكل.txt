@@ -1,0 +1,34 @@
+project-management-system/
+├── backend/
+│   ├── config/
+│   │   └── db.config.js
+│   ├── controllers/
+│   │   ├── auth.controller.js
+│   │   ├── project.controller.js
+│   │   ├── task.controller.js
+│   │   └── ticket.controller.js
+│   ├── models/
+│   │   ├── user.model.js
+│   │   ├── project.model.js
+│   │   ├── task.model.js
+│   │   └── ticket.model.js
+│   ├── routes/
+│   │   ├── auth.routes.js
+│   │   ├── project.routes.js
+│   │   ├── task.routes.js
+│   │   └── ticket.routes.js
+│   ├── middleware/
+│   │   └── auth.js
+│   └── server.js
+├── frontend/
+│   ├── public/
+│   ├── src/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── services/
+│   │   ├── App.js
+│   │   └── index.js
+│   └── package.json
+└── database/
+    ├── schema.sql
+    └── sample-data.sql
